@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('fiveApi', [
+angular
+  .module('fiveApi', [
     'ui.router',
     'fiveApi.home',
     'fiveApi.docs'
