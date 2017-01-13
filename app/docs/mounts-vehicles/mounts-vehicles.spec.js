@@ -25,7 +25,7 @@ describe('fiveApi.docs.mountsVehicles', function() {
     }));
 
     it('should respond to URL', function() {
-      expect($state.href(state)).toEqual('#/docs/mountsVehicles');
+      expect($state.href(state)).toEqual('#/docs/mounts-vehicles');
     });
 
     it('should activate the state', function() {

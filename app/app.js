@@ -4,8 +4,7 @@ angular
   .module('fiveApi', [
     'ui.router',
     'fiveApi.home',
-    'fiveApi.docs',
-    'fiveApi.docs.introduction'
+    'fiveApi.docs'
   ]).config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
   });

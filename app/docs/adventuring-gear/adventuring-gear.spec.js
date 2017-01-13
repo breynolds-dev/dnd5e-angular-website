@@ -25,7 +25,7 @@ describe('fiveApi.docs.adventuringGear', function() {
     }));
 
     it('should respond to URL', function() {
-      expect($state.href(state)).toEqual('#/docs/adventuringGear');
+      expect($state.href(state)).toEqual('#/docs/adventuring-gear');
     });
 
     it('should activate the state', function() {

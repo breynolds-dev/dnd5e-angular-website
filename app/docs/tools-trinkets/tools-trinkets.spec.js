@@ -25,7 +25,7 @@ describe('fiveApi.docs.toolsTrinkets', function() {
     }));
 
     it('should respond to URL', function() {
-      expect($state.href(state)).toEqual('#/docs/toolsTrinkets');
+      expect($state.href(state)).toEqual('#/docs/tools-trinkets');
     });
 
     it('should activate the state', function() {

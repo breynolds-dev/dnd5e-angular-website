@@ -25,7 +25,7 @@ describe('fiveApi.docs.weaponsArmor', function() {
     }));
 
     it('should respond to URL', function() {
-      expect($state.href(state)).toEqual('#/docs/weaponsArmor');
+      expect($state.href(state)).toEqual('#/docs/weapons-armor');
     });
 
     it('should activate the state', function() {

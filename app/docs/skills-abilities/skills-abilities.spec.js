@@ -25,7 +25,7 @@ describe('fiveApi.docs.skillsAbilities', function() {
     }));
 
     it('should respond to URL', function() {
-      expect($state.href(state)).toEqual('#/docs/skillsAbilities');
+      expect($state.href(state)).toEqual('#/docs/skills-abilities');
     });
 
     it('should activate the state', function() {
