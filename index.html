@@ -1,26 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="fiveApi">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/app.css">
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/home">Home</a></li>
-    <li><a href="#/docs">Docs</a></li>
-  </ul>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>5e-API - A Dungeons & Dragons API</title>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body style="background-image: url('img/background3.jpg');background-repeat:no-repeat;background-position: center center;background-attachment: fixed; background-size: cover; background-color: #464646;">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/#/home" class="brand-logo uppercase">5E<sup class="orange-text">API</sup></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/#/home" class="uppercase">Home</a></li>
+        <li><a href="/#/contact" class="uppercase">Contact</a></li>
+        <li><a href="/#/docs">Documentation</a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/#/home">Home</a></li>
+        <li><a href="/#/contact">Contact</a></li>
+        <li><a href="/#/docs">Documentation</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="300" data-closeonclick="false"><i class="material-icons orange-text">menu</i></a>
+    </div> <!-- end nav-wrapper -->
+  </nav><!-- end navigation -->
 
   <div ui-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div class="container">
+    <div class="section">
+      <div class="row section-header">
+        <h3 class="light center section-header">More Information</h3>
+      </div>
+      <div class="row">
+        <div class="divider"></div>
+      </div>
+      <div class="section-content row">
+        <div class="col m12 l4 center">
+          <h5 class="grey-text text-darken-3">More Information</h5>
+          <p>Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2015 Wizards. All Rights Reserved. 5e-api.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</p>
+        </div>
+
+        <div class="col m12 l4 center">
+          <a href="https://m.do.co/c/741062b30995" class="orange-text"><img class="responsive-img" src="img/do-logo.png" /></a>
+          <p>This application runs on a DigitalOcean droplet.  DigitalOcean is an amazing hosting service that I highly reccomend you checkout! </p>
+        </div>
+
+        <div class="col m12 l4 center">
+          <h5 class="grey-text text-darken-3" id="contact">Contact</h5>
+          <ul class="footer-links">
+            <li>Brian Reynolds</li>
+            <li>Email: bri.reynolds@gmail.com</li>
+            <li>Twitter: <a class="orange-text" href="http://twitter.com/breynolds_dev">@breynolds-dev</a></li>
+            <li>Github: <a class="orange-text" href="https://github.com/breynolds-dev">breynolds-dev</a></li>
+            <li>&nbsp;</li>
+            <li>Brennan Holtzclaw</li>
+            <li>Email: brennan.holtzclaw@gmail.com</li>
+            <li>Twitter: <a class="orange-text" href="http://twitter.com/brennanwebdev">@brennanwebdev</a></li>
+            <li>Github: <a class="orange-text" href="https://github.com/brennanholtzclaw">brennanholtzclaw</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -31,5 +82,7 @@
   <script src="app/components/version/version.js"></script>
   <script src="app/components/version/version-directive.js"></script>
   <script src="app/components/version/interpolate-filter.js"></script>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,1 +1,55 @@
-<p>This is our Home View</p>
+<div class="container">
+  <div class="section">
+    <div class="row section-header">
+      <h3 class="light center section-header">Welcome to the 5E<sup class="orange-text">API</sup></h3>
+    </div>
+    <div class="row">
+      <div class="divider"></div>
+    </div>
+    <div class="section-content">
+      <p>The 5eAPI aims to be a RESTful API endpoint for Dungeons & Dragons 5th Edition content.  This is free to use and available to all.</p>
+      <p>This project is a labor of love from several D&D players and while it is still currently under construction we welcome any and all to use what is available!  We are working to get more content added as quickly as we can.  We appreciate your patience in this and if there are any suggestions or idea please contact us using the information at the bottom of the page.</p>
+      <p>You can test various endpoint's below to see what is available and what data is returned in your request.  We also have some documentation available.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container interactive-container" id="testapi">
+  <div class="section">
+    <div class="row section-header">
+      <h3 class="light center section-header">Try it Now!</h3>
+    </div>
+    <div class="row no-bot-margin">
+      <div class="divider no-bot-margin"></div>
+    </div>
+    <div class="section-content">
+      <div class="row center">
+        <form>
+          <div class="col s12 m10 l8 offset-l1">
+            <div class="col m4 right-align pre-interactive">
+              http://5e-api.com/v1/
+            </div>
+            <div class="input-field inline col m8 interactive">
+              <input id="interactive" class="interactive" type="text">
+              <label for="interactive">Try it Now!</label>
+              <br />
+              <small class="left">Need a hint? try <a href="#testapi" onclick="callApi(&#39;#interactive_output&#39;,&#39;classes/bard/2&#39;);return false;"><i>classes/bard/2</i></a> or
+                <a href="#testapi" onclick="callApi(&#39;#interactive_output&#39;,&#39;races/elf/high-elf&#39;);return false;"><i>races/elf/high-elf</i></a> or
+                <a href="#testapi" onclick="callApi(&#39;#interactive_output&#39;,&#39;abilities/strength/&#39;);return false;"><i>abilities/strength/</i></a></small>
+            </div>
+          </div>
+          <div class="col s12 m2 l1 button-interactive">
+            <button class="btn waves-effect waves-light orange" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="card grey lighten-4">
+          <div class="card-content">
+            <pre id="interactive_output" name="interactive_output" class="code"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
