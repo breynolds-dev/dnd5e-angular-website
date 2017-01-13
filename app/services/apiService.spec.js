@@ -116,7 +116,6 @@ describe('fiveApi.apiService', function () {
         });
 
       $httpBackend.flush();
-      console.log(result);
       expect(result.status).toEqual(404);
       expect(result.path).toEqual('/v1/races/khajiit');
     })
