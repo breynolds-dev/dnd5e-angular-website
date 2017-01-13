@@ -36,7 +36,7 @@ describe('fiveApi.docs', function() {
     });
   });
 
-  describe('DocsCtrl', function () {
+  describe('Controller', function () {
     it('should exist', function () {
       expect(ctrl).toBeDefined();
     })
