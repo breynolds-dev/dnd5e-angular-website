@@ -24,7 +24,7 @@ describe('fiveApi.apiService', function () {
       $httpBackend.verifyNoOutstandingRequest();
     }));
 
-    it('should grab an array of JSON objects', function () {
+    it('should return an array of JSON objects', function () {
       var apiRaceIndex = [
         { "name": "Dragonborn" },
         { "name": "Dark Elf" },
@@ -62,7 +62,7 @@ describe('fiveApi.apiService', function () {
       $httpBackend.verifyNoOutstandingRequest();
     }));
 
-    it('should grab a JSON race object without a subrace', function () {
+    it('should return a JSON race object without a subrace', function () {
       var apiRaceDragonborn = {
         "name": "Dragonborn",
         "subrace": null
@@ -82,7 +82,7 @@ describe('fiveApi.apiService', function () {
       expect(result.subrace).toBe(null);
     })
 
-    it('should grab a JSON race object with a subrace', function () {
+    it('should return a JSON race object with a subrace', function () {
       var apiRaceDragonborn = {
         "name": "Elf",
         "subrace": "Dark Elf"
@@ -100,6 +100,25 @@ describe('fiveApi.apiService', function () {
 
       expect(result.name).toBe('Elf');
       expect(result.subrace).toBe('Dark Elf');
+    })
+
+    it('should return a 404 with an invalid race', function () {
+      $httpBackend.whenGET('http://www.5e-api.com/v1/races/khajiit')
+        .respond(404, {
+          "status": 404,
+          "error": "resource not found",
+          "path": "/v1/races/khajiit"
+        });
+
+      apiService.getRace('Khajiit')
+        .catch(function (res) {
+          result = res.data;
+        });
+
+      $httpBackend.flush();
+      console.log(result);
+      expect(result.status).toEqual(404);
+      expect(result.path).toEqual('/v1/races/khajiit');
     })
   })
 });
