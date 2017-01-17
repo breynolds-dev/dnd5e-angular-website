@@ -28,7 +28,6 @@ describe('fiveApi.home', function() {
       expect($state.href(state)).toEqual('#/home');
     });
 
-    // Test whether our state activates correctly
     it('should activate the state', function() {
       $state.go(state);
       $rootScope.$digest();
