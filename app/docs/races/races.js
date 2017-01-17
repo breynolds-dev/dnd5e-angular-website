@@ -11,6 +11,21 @@ angular.module('fiveApi.docs.races', ['fiveApi.apiService'])
         .then(function (result) {
           racesController.raceIndex = result.data;
         })
+
+      ApiService.getRace('Dragonborn', '')
+        .then(function (result) {
+          racesController.raceDetails = result.data;
+        })
+
+      ApiService.getRace('Elf', '')
+        .then(function (result) {
+          racesController.raceSubraceOptions = result.data;
+        })
+
+      ApiService.getRace('Elf', 'Dark Elf')
+        .then(function (result) {
+          racesController.raceSubraceDetails = result.data;
+        })
     }
   })
   .config(function($stateProvider) {

@@ -1,6 +1,7 @@
 describe('fiveApi.apiService', function () {
   var apiService;
   var baseUrl = 'http://www.5e-api.com/v1/'
+  // var baseUrl = 'http://localhost:3000/v1/'
 
   beforeEach(module('fiveApi.apiService'));
   beforeEach(inject(function (_ApiService_) {
