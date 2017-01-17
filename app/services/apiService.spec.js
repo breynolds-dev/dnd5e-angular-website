@@ -1,5 +1,6 @@
 describe('fiveApi.apiService', function () {
   var apiService;
+  var baseUrl = 'http://localhost:3000/v1/'
 
   beforeEach(module('fiveApi.apiService'));
   beforeEach(inject(function (_ApiService_) {
@@ -33,7 +34,7 @@ describe('fiveApi.apiService', function () {
         { "name": "Tiefling" }
       ]
 
-      $httpBackend.whenGET('http://www.5e-api.com/v1/races')
+      $httpBackend.whenGET(baseUrl + 'races')
         .respond(apiRaceIndex);
 
       apiService.getRaces()
@@ -68,7 +69,7 @@ describe('fiveApi.apiService', function () {
         "subrace": null
       }
 
-      $httpBackend.whenGET('http://www.5e-api.com/v1/races/dragonborn')
+      $httpBackend.whenGET(baseUrl + 'races/dragonborn')
         .respond(apiRaceDragonborn);
 
       apiService.getRace('Dragonborn')
@@ -88,7 +89,7 @@ describe('fiveApi.apiService', function () {
         "subrace": "Dark Elf"
       }
 
-      $httpBackend.whenGET('http://www.5e-api.com/v1/races/elf/dark-elf')
+      $httpBackend.whenGET(baseUrl + 'races/elf/dark-elf')
         .respond(apiRaceDragonborn);
 
       apiService.getRace('Elf', 'Dark Elf')
@@ -103,7 +104,7 @@ describe('fiveApi.apiService', function () {
     })
 
     it('should return a 404 with an invalid race', function () {
-      $httpBackend.whenGET('http://www.5e-api.com/v1/races/khajiit')
+      $httpBackend.whenGET(baseUrl + 'races/khajiit')
         .respond(404, {
           "status": 404,
           "error": "resource not found",
