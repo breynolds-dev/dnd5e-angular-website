@@ -15,10 +15,21 @@ module.exports = function(config) {
       'app/services/**/*.js',
       'app/home/**/*.spec.js',
       'app/home/**/*.js',
+      'app/tracking/**/*.spec.js',
+      'app/tracking/**/*.js',
       'app/docs/**/*.spec.js',
       'app/docs/**/*.js',
-      'app/view*/**/*.js'
+      'app/**/**/*.html'
     ],
+
+    preprocessors: {
+      'app/**/**/*.html': 'ng-html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'fiveApi.templates'
+    },
 
     autoWatch: true,
 
@@ -34,7 +45,8 @@ module.exports = function(config) {
       'karma-osx-reporter',
       'karma-browserify',
       'karma-babel-preprocessor',
-      'karma-spec-reporter'
+      'karma-spec-reporter',
+      'karma-ng-html2js-preprocessor'
     ],
 
     reporters: ['spec']
