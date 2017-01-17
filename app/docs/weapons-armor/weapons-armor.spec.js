@@ -1,8 +1,6 @@
 describe('fiveApi.docs.weaponsArmor', function() {
   var $controller;
 
-  beforeEach(module('fiveApi'));
-  beforeEach(module('fiveApi.apiService'));
   beforeEach(module('fiveApi.docs'));
   beforeEach(module('fiveApi.docs.weaponsArmor'));
   beforeEach(module('ui.router'));
