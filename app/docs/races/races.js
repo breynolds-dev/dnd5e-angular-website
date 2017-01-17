@@ -1,13 +1,23 @@
 'use strict';
 
-angular.module('fiveApi.docs.races', [])
-  .controller('DocsRacesController', function() {
+angular.module('fiveApi.docs.races', ['fiveApi.apiService'])
+  .controller('DocsRacesController', function(ApiService) {
+    var racesController = this;
+
+    loadApiData();
+
+    function loadApiData () {
+      ApiService.getRaces()
+        .then(function (result) {
+          racesController.raceIndex = result.data;
+        })
+    }
   })
   .config(function($stateProvider) {
     $stateProvider
       .state('docs.races', {
         url: '/races',
         templateUrl: 'app/docs/races/races.html',
-        controller: 'DocsRacesController'
+        controller: 'DocsRacesController as $ctrl'
       });
   });

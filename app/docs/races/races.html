@@ -9,11 +9,7 @@
   <br />
   <div class="row">
     <h5 class="light orange-text text-darken-4 center-align">GET v1/races</h5>
-    <div class="card grey lighten-4">
-      <div class="card-content">
-        <pre id="race_index" name="race_index" class="code"></pre>
-      </div>
-    </div>
+    <code-box name="race_index" content="{{ $ctrl.raceIndex | json}}"></code-box>
     <p>The first endpoint you can target will return an array of all of the race options currently in our API</p>
     <table class="bordered">
       <thead>
@@ -41,11 +37,7 @@
   <br />
   <h5 class="light orange-text text-darken-4 center-align">GET v1/races/{race}</h5>
   <div class="row">
-    <div class="card grey lighten-4">
-      <div class="card-content">
-        <pre id="race_details" name="race_details" class="code"></pre>
-      </div>
-    </div>
+    <code-box name="race_details" content="{{ $ctrl.raceDetails | json }}"></code-box>
     <div class="row">
       <p>Attempting to access a class resource when no subclasses are available will return a JSON object for the associated class.</p>
       <table class="bordered">
