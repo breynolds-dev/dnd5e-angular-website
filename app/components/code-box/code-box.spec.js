@@ -1,23 +1,22 @@
 describe('fiveApi.components.codeBox', function () {
-  var element, scope;
+  var ctrl, scope;
 
   beforeEach(module('fiveApi.templates'));
   beforeEach(module('fiveApi.components.codeBox'));
 
-  beforeEach(inject(function($rootScope, $compile, $templateCache) {
-    $templateCache.put('app/components/code-box/code-box.html', '');
-
+  beforeEach(inject(function($rootScope, $componentController) {
     scope = $rootScope.$new();
-
-    element = angular.element('<code-box name="{{name}}" content="{{content}}"></code-box>');
-    element = $compile(element)(scope);
-
-    scope.name = "weapons_index";
-    scope.content = "Loading ...";
-    scope.$digest();
+    ctrl = $componentController('codeBox',
+      {$scope: scope},
+      {
+        title: 'weapons_armor',
+        content: 'Loading ...'
+      }
+    )
   }));
 
-  it('displays a box', function () {
-    expect(element.text()).toBe('Loading ...');
-  });
-})
+  it('should have the information loaded into the component scope', function () {
+    expect(ctrl.title).toEqual('weapons_armor');
+    expect(ctrl.content).toEqual('Loading ...');
+  })
+});
