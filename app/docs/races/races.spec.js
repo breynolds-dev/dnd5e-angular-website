@@ -45,7 +45,7 @@ describe('fiveApi.docs.races', function() {
       expect(DocsRacesController).toBeDefined();
     });
 
-    fdescribe('loadApiData()', function () {
+    describe('loadApiData()', function () {
       var $httpBackend, result;
       var baseUrl = 'http://www.5e-api.com/v1/'
       // var baseUrl = 'http://localhost:3000/v1/'

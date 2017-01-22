@@ -10,7 +10,7 @@ describe('fiveApi.home', function() {
   beforeEach(inject(function ($controller, _ApiService_) {
     ctrl = $controller('HomeCtrl');
     apiService = _ApiService_;
-  }))
+  }));
 
   describe('State', function () {
     var $state,
