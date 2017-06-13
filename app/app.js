@@ -6,6 +6,7 @@ angular
     'fiveApi.home',
     'fiveApi.docs',
     'fiveApi.components'
-  ]).config(function($stateProvider, $urlRouterProvider) {
+  ]).config(function($locationProvider, $urlRouterProvider) {
+    $locationProvider.hashPrefix('');
     $urlRouterProvider.otherwise("/home");
   });

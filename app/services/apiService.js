@@ -2,8 +2,7 @@ angular
   .module('fiveApi.apiService', [])
   .service('ApiService', function ($http) {
     var apiService = this;
-    var baseUrl = 'http://www.5e-api.com/v1/'
-    // var baseUrl = 'http://localhost:3000/v1/'
+    var baseUrl = "http://www.5e-api.com/v1/";
 
     apiService.getRaces = function () {
       return $http.get(baseUrl + "races");
